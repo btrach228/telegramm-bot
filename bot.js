@@ -13,7 +13,7 @@ bot.start((ctx) =>
 
 `,
     Markup.keyboard([
-      ['Ukraine', 'Russia'],
+      ['Ukraine', 'Close'],
       ['/help', '/start'],
     ])
       .resize()
@@ -37,14 +37,15 @@ bot.on('text', async (ctx) => {
 Смеpти:${data[0][0].deaths}
 Вылечено:${data[0][0].recovered}
   `;
+    console.log('Success');
+
     ctx.reply(FormatData);
   } catch {
     console.log('ERROR');
     ctx.reply(`${ctx.message.from.first_name}, название страны указано неверно ! `);
   }
 });
-
-bot.hears('Спасибо', (ctx) => ctx.reply('Всегда пожалуйста)'));
+let close = 'node .exit';
 bot.launch();
 
 // this is the console log
