@@ -42,7 +42,9 @@ bot.on('text', async (ctx) => {
     ctx.reply(FormatData);
   } catch {
     console.log('ERROR');
-    ctx.reply(`${ctx.message.from.first_name}, название страны указано неверно ! `);
+    ctx.reply(
+      `${ctx.message.from.first_name}, название страны указано неверно или данной страны, пока что, нет в списке ;-) ! `
+    );
   }
 });
 bot.launch();
