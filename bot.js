@@ -13,7 +13,7 @@ bot.start((ctx) =>
 
 `,
     Markup.keyboard([
-      ['Ukraine', 'Close'],
+      ['Ukraine', 'Russia'],
       ['/help', '/start'],
     ])
       .resize()
