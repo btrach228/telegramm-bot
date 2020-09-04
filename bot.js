@@ -45,7 +45,6 @@ bot.on('text', async (ctx) => {
     ctx.reply(`${ctx.message.from.first_name}, название страны указано неверно ! `);
   }
 });
-let close = 'node .exit';
 bot.launch();
 
 // this is the console log
