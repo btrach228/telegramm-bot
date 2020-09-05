@@ -51,4 +51,4 @@ bot.launch();
 
 // this is the console log
 console.log('Bot started');
-console.log(process.env);
+console.log('Bot Token: ', bot_TOKEN);
