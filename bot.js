@@ -5,7 +5,7 @@ const api = require('covid19-api');
 let Markup = require('telegraf/markup');
 const countryName = require('./contries');
 
-const bot = new Telegraf(process.env.bot_token);
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) =>
   ctx.reply(
@@ -51,4 +51,3 @@ bot.launch();
 
 // this is the console log
 console.log('Bot started');
-console.log(bot_TOKEN);
