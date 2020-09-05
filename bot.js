@@ -21,7 +21,9 @@ bot.start((ctx) =>
   )
 );
 
-bot.help((ctx) => ctx.reply('Здесь можешь просмотреть список доступных стран ' + countryName));
+bot.help((ctx) =>
+  ctx.reply('Здесь можешь просмотреть список доступных стран ' + ' ' + countryName)
+);
 bot.on('sticker', async (ctx) =>
   ctx.reply('Мне очень нравится это стикер, но нужно названия страны  ,можешь воспользоватся /help')
 );
@@ -37,11 +39,11 @@ bot.on('text', async (ctx) => {
 Смеpти:${data[0][0].deaths}
 Вылечено:${data[0][0].recovered}
   `;
-    console.log('Success');
+    console.log('Success type');
 
     ctx.reply(FormatData);
   } catch {
-    console.log('ERROR');
+    console.log('type error');
     ctx.reply(
       `${ctx.message.from.first_name}, название страны указано неверно или данной страны, пока что, нет в списке ;-) ! `
     );
