@@ -1,25 +1,35 @@
-require('dotenv').config();
+require('dotenv').config(); // подключаем  dotenv
 
-const Telegraf = require('telegraf');
-const api = require('covid19-api');
-let Markup = require('telegraf/markup');
-const countryName = require('./contries');
+const Telegraf = require('telegraf'); //подключаем  telegraf
+const api = require('covid19-api'); //подкл  covid19-api токен
+let Markup = require('telegraf/markup'); // добавляем кнопки
+const countryName = require('./contries'); //подключаем сторонний файл в котором списко стран
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
-
-bot.start((ctx) =>
-  ctx.reply(
-    `Привет, ${ctx.message.from.first_name}!
+// назначаем оветы на сообщение
+bot.start(
+  (ctx) =>
+    ctx.reply(
+      `Привет, ${ctx.message.from.first_name}!
 
 `,
-    Markup.keyboard([
-      ['Ukraine', 'Russia'],
-      ['/help', '/start'],
-    ])
-      .resize()
-      .extra()
-  )
+      Markup.keyboard([
+        //кнопки
+        ['Ukraine', 'Russia'],
+        ['/help', '/start'],
+      ])
+        .resize()
+        .extra()
+    )
+  // console.log('User:' + message.from.first_name + ' start the chat')//  отслеживаем какой юзер кликнул тоесть зашел в бот
 );
+
+//reaction on hello
+// bot.on('text', (ctx) => {
+//   if (ctx.message.from == 'Hello') {
+//     ctx.reply('Привет, ' + ctx.message.from.first_name);
+//   }
+// });
 
 bot.help((ctx) =>
   ctx.reply('Здесь можешь просмотреть список доступных стран ' + ' ' + countryName)
@@ -49,6 +59,7 @@ bot.on('text', async (ctx) => {
     );
   }
 });
+
 bot.launch();
 
 // this is the console log
