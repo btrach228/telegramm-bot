@@ -15,7 +15,7 @@ bot.start(
 `,
       Markup.keyboard([
         //кнопки
-        ['Ukraine 🇺🇦', 'Russia 🇷🇺'],
+        ["Ukraine '🇺🇦'", "Russia '🇷🇺'"],
         ['/help 🚑', '/start ⏯'],
       ])
         .resize()
