@@ -15,8 +15,8 @@ bot.start(
 `,
       Markup.keyboard([
         //кнопки
-        ['Ukraine', 'Russia'],
-        ['/help', '/start'],
+        ['Ukraine 🇺🇦', 'Russia 🇷🇺'],
+        ['/help 🚑', '/start ⏯'],
       ])
         .resize()
         .extra()
@@ -44,10 +44,13 @@ bot.on('text', async (ctx) => {
     data = await api.getReportsByCountries(ctx.message.text);
 
     const FormatData = `
+    Age:${data[0][0].fatalityRateByAge}
+
 Страна:${data[0][0].country}
 Случаи:${data[0][0].cases}
 Смеpти:${data[0][0].deaths}
 Вылечено:${data[0][0].recovered}
+
   `;
     console.log('Success type');
 
@@ -64,3 +67,4 @@ bot.launch();
 
 // this is the console log
 console.log('Bot started');
+// console.log(ctx.message.text);
